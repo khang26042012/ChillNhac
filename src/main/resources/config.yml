@@ -1,0 +1,11 @@
+# ============================================
+# CHILLNHAC v1.0.0 - nhac nen chill tu dong (khong can lenh)
+# Chay la phat, het bai tu chuyen bai tiep (xoay vong)
+# ============================================
+# Am luong 1-100 (de nho ~25 cho vua nghe, khong at tieng game)
+volume: 25
+# Xao tron playlist khi start (true) hay phat theo thu tu A-Z (false)
+shuffle: true
+# Bao lau kiem tra 1 lan de chuyen bai (ticks, 200 = 10 giay)
+check-ticks: 200
+# Them bai: tha file .nbs vao plugins/ChillNhac/songs/ + restart (khong can build lai)

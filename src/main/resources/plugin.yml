@@ -1,0 +1,7 @@
+name: ChillNhac
+version: 1.0.0
+main: vn.pika.chillnhac.ChillNhac
+api-version: "1.20"
+author: PikaMC
+description: 'Nhac nen chill tu dong cho ca server (radio, khong can lenh)'
+website: https://pikamc.vn
