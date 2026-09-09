@@ -28,6 +28,7 @@ public class ChillMusic {
     private BukkitTask task;
     private volatile boolean playing;
     private SongData song;
+    private java.util.function.Predicate<java.util.UUID> muteCheck;
 
     public ChillMusic(JavaPlugin plugin, File songFile, int volume) {
         this.plugin = plugin;
@@ -76,6 +77,11 @@ public class ChillMusic {
         return playing;
     }
 
+    /** Nguoi tat nhac (/nhac) se bi skip note — mac dinh ai cung nghe. */
+    public void setMuteCheck(java.util.function.Predicate<java.util.UUID> check) {
+        this.muteCheck = check;
+    }
+
     public void refreshPlayer(Player p) {
         // Radio mode: player online la nghe duoc, khong can dang ky
     }
@@ -85,6 +91,12 @@ public class ChillMusic {
         List<NoteEvent> list = song.byTick.get(tick);
         if (list == null || list.isEmpty()) return;
         for (Player p : Bukkit.getOnlinePlayers()) {
+            if (muteCheck != null) {
+                try {
+                    if (muteCheck.test(p.getUniqueId())) continue;
+                } catch (Throwable ignored) {
+                }
+            }
             Location loc = p.getLocation();
             for (NoteEvent n : list) {
                 try {

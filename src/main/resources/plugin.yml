@@ -1,5 +1,14 @@
 name: ChillNhac
-version: 1.0.0
+version: 1.1.0
+commands:
+  nhac:
+    description: 'Tat/mo nhac chill rieng cho ban (mac dinh mo)'
+    usage: '/nhac'
+    permission: chillnhac.use
+permissions:
+  chillnhac.use:
+    description: 'Duoc tat/mo nhac chill'      
+    default: true
 main: vn.pika.chillnhac.ChillNhac
 api-version: "1.20"
 author: PikaMC
