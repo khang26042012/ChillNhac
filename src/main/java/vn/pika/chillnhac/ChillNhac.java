@@ -59,7 +59,7 @@ public class ChillNhac extends JavaPlugin implements Listener {
             }
         }, period, period).getTaskId();
         Bukkit.getPluginManager().registerEvents(this, this);
-        getLogger().info("ChillNhac v1.1 da bat! Len h /nhac de tat/mo. Nghe chill nhe ae.");
+        getLogger().info("ChillNhac v1.1 da bat! Lenh /nhac de tat/mo. Nghe chill nhe ae.");
     }
 
     @Override
@@ -103,10 +103,7 @@ public class ChillNhac extends JavaPlugin implements Listener {
         return true;
     }
 
-    /** ChillMusic co skip nguoi tat khong? Khong — engine phat toan server.
-     *  Giai phap: khi tat, stopAllSounds ngay + watchdog se phat tiep bai sau
-     *  nhung nguo i tat se lai nghe. De tat TRIET DE can loc per-player trong engine.
-     *  => Xem MutedNoteFilter ben duoi: engine goi isMuted(uuid) truoc moi note. */
+    /** Loc per-player: engine goi isMuted(uuid) truoc moi note. */
     public boolean isMuted(UUID id) {
         return muted.contains(id);
     }
